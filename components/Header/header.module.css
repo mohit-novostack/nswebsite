@@ -1,0 +1,149 @@
+.navbar {
+  background-color: var(--white);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1440px;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbarHeader {
+  display: flex;
+  align-items: center;
+  /* margin-left: 55px; */
+}
+
+.navbarLogo {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.navbarMenu {
+  display: flex;
+  /* height: 16%; */
+  list-style: none;
+  padding: 9px 22px;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.navbarItem {
+  margin: 0px 43px;
+  font-size: 16px;
+  color: #3D3D3D
+}
+
+.navbarItems {
+  color: white;
+  background-color: var(--sea-green);
+  padding: 9px 22px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+} 
+
+.navbarItems:hover {
+  padding: 9px 22px 10px 22px;
+}
+
+.navbarItem::after {
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color:var(--sea-green);
+  margin: auto;
+  display: block;
+}
+
+.navbarItem:hover {
+  color: #4EA88A;
+}
+
+.navbarItem:hover::after {
+  color: #4EA88A;
+  width: 100%;
+  transition: width 0.2;
+}
+
+.hamburger{
+  display: none;
+  cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--dark-gray);
+}
+
+.navbarLink {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbarLink:hover {
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .hamburger{
+      display: block;
+      position: absolute;
+      margin-left: -35px;
+      top: 17px;
+  }
+
+  .hamburger.active.bar:nth-child(2){
+      opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+  }
+
+.navbarMenu{
+  left: -100%;
+  position: fixed;
+  top:70px;
+  gap:0;
+  flex-direction: column;
+  background-color: var(--dark-gray);
+  width: 100%;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.navbarMenu.open {
+  display: flex;
+}
+.navbarItem{
+  margin: 16px 0;
+  font-size: 10px;
+}
+
+.navbarLink{
+  color: #333;
+}
+.navbarMenu.active{
+  left: 0;
+}
+
+}
